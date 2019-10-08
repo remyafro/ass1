@@ -1,9 +1,13 @@
 'use strict';
 
-var server = require("./js/server");
-// var router = require("./js/router");
-// var requestHandlers = require("./js/requestHandlers");
+var server = require('./js/server');
+var router = require('./js/router');
+var rh = require('./js/requestHandler');
 
 var handle = {};
 
- server.startServer();
+handle["/"] = rh.reqHome;
+handle["/css"] = rh.reqCss;
+handle["/reqError"] = rh.reqError;
+
+server.startServer(router.route, handle);

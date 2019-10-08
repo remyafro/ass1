@@ -5,10 +5,10 @@ var url = require('url');
 
 function startServer(route,handle) {
 
-	function onRequest(requst, response){
+	function onRequest(request, response){
 
 		var pathname = url.parse(request.url).pathname;
-		console.log(request.method + "REQUEST FOR: " + parhname);
+		console.log(request.method + " REQUEST FOR: " + pathname);
 		route(handle, pathname, request, response);
 	}
 
