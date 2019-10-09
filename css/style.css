@@ -9,7 +9,7 @@ body{
 }
 
 .navbar{
-    background: #2b7a78;
+    background: #46ACC2;
     height: 100px;
     padding: 0 20px;
     display: flex;
@@ -40,4 +40,47 @@ body{
 .intro{
     font-size: 33px;
 
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100vw;
+    background-color: #46ACC2;
+    color: #fff;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a{
+    color: #fff;
+}
+
+#addStudentForm{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.form_element{
+    padding: 10px 20px;
+}
+
+button{
+    margin: 0 5px;
+}
+
+table,
+th,
+td{
+    margin: 30px auto 0 auto;
+    border: 1px solid black;
+}
+
+th,
+td{
+    padding:10px;
 }

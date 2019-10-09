@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/css"/>
+	<title>Remy Assignment 1</title>
+</head>
+<body>
+<header class="header">
+	<div class="navbar">
+		<ul class="navbar_main">
+			<li class="navbar_item"><a href="/addStudent">Add Student</a></li>
+			<li class="navbar_item-desktop"><a href="/degreeList">List Of Students</a></li>
+			<li class="navbar_item-desktop"><a href="#">Upload Image</a></li>
+		</ul>
+	</div>
+</header>
+<div class="main">
+	<h1 class="intro">Add Student</h1>
+	<div class="content_main">
+		<h2>Enter details of student in the form!</h2>
+		<form id="addStudentForm" method="POST" action="/addStudent">
+			<div class="form_element">
+				<label>Student ID:</label>
+				<input type="text" name="studentID" id="studentID" required="true" pattern=".{8}" size="8">
+			</div>
+
+			<div class="form_element">
+				<label>First Name:</label>
+				<input type="text" name="firstName" id="firstName" required="true">
+			</div>
+
+			<div class="form_element">
+				<label>Last Name:</label>
+				<input type="text" name="lastName" id="lastName" required="true">
+			</div>
+
+			<div class="form_element">
+				<label>Input Age:</label>
+				<input type="number" name="age" id="age" min="18" max="99" required="true">
+			</div>
+
+			<div class="form_element">
+				<label>Select Gender:</label>
+				<label><input type="radio" name="gender" id="gender" value="male" required>Male</label>
+				<label><input type="radio" name="gender" id="gender" value="female">Female</label>
+				<label><input type="radio" name="gender" id="gender" value="other">Other</label>
+			</div>
+
+			<div class="form_element">
+				<label>Degree:</label>
+				<input type="text" name="degree" id="degree" required="true">
+			</div>
+
+			<button type="submit" value="submit">Submit</button>
+			<button type="reset">Reset</button>
+		</form>
+
+	</div>
+</div>
+</body>
+<footer>
+	<a href="/">return home</a>
+</footer>
+</html>

@@ -6,6 +6,7 @@
   "author": "rramli <remy.ramli@hotmail.com>",
   "license": "MIT",
   "dependencies": {
-    "formidable": "^1.2.1"
+    "formidable": "^1.2.1",
+    "nodemon": "^1.19.3"
   }
 }
