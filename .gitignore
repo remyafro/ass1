@@ -17,3 +17,5 @@ Thumbs.db
 
 package.json
 yarn.lock
+
+node_modules/
