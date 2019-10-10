@@ -6,6 +6,7 @@ var Readable = require('stream').Readable;
 
 var addStudent = require('./addStudent');
 var listStudent = require('./listStudent');
+var viewImage = require('./viewImage');
 
 function reqError(request, response){
     response.writeHead(200, {'Content-Type' : 'text/html'});
@@ -71,6 +72,47 @@ function reqListStudent(request, response){
 
 }
 
+function reqUploadImage(request, response){
+    response.writeHead(200, {'Content-Type' : 'text/html'});
+    var page = fs.createReadStream('html/uploadImage.html');
+    page.pipe(response);
+
+}
+
+function reqAddImage(request, response) {
+
+    var form = new formidable.IncomingForm();
+    form.uploadDir = '/tmp/';
+
+    form.parse(request, function (err, fields, files) {
+
+        var oldPath = files.upload.path;
+        console.log(oldPath);
+        var newPath = 'images/' + files.upload.name;
+
+        fs.rename(oldPath, newPath, function (err) {
+            if (err) throw err;
+
+            var rs = viewImage.showImage(newPath)
+            response.writeHead(200, {'Content-Type' : 'text/html'});
+            response.write(rs);
+            response.end();
+        });
+    })
+
+}
+
+function reqFile(request, response, pathname) {
+    var pathname = pathname.replace("/","");
+    console.log("getting image..");
+
+    console.log(pathname);
+    response.writeHead(200, {"Content-Type":"image/png"});
+    fs.createReadStream(pathname).pipe(response);
+
+
+}
+
 
 exports.reqHome = reqHome;
 exports.reqCss = reqCss;
@@ -79,3 +121,6 @@ exports.reqError = reqError;
 exports.reqAddStudent = reqAddStudent;
 exports.reqListStudent = reqListStudent;
 exports.reqDegreeList = reqDegreeList;
+exports.reqUploadImage = reqUploadImage;
+exports.reqAddImage = reqAddImage;
+exports.reqFile = reqFile;

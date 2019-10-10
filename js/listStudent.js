@@ -9,7 +9,7 @@ function totalList(data){
 	var currentTotal = [];
 	var students = [];
 
-	var csv = 'csv/data.csv';
+	var csv = 'data/data.csv';
 	var encoding = 'utf-8';
 	var csvData = fs.readFileSync(csv,encoding);
 
@@ -47,7 +47,7 @@ function totalList(data){
 			'<ul class="navbar_main">' +
 			'<li class="navbar_item"><a href="/addStudent">Add Student</a></li>' +
 			'<li class="navbar_item-desktop"><a href="/degreeList">List Of Students</a></li>' +
-			'<li class="navbar_item-desktop"><a href="#">Upload Image</a></li>' +
+			'<li class="navbar_item-desktop"><a href="/uploadImage">Upload Image</a></li>' +
 			'</ul>' +
 			'</div>' +
 			'</header>' +
@@ -80,7 +80,7 @@ function totalList(data){
 
 function getCurrentDegrees(){
 
-	var csv = 'csv/data.csv';
+	var csv = 'data/data.csv';
 	var encoding = 'utf-8';
 	var data = fs.readFileSync(csv,encoding);
 	var students = [];
@@ -124,7 +124,7 @@ function getCurrentDegrees(){
 		'<ul class="navbar_main">' +
 		'<li class="navbar_item"><a href="/addStudent">Add Student</a></li>' +
 		'<li class="navbar_item-desktop"><a href="/listStudent">List Of Students</a></li>' +
-		'<li class="navbar_item-desktop"><a href="#">Upload Image</a></li>' +
+		'<li class="navbar_item-desktop"><a href="/uploadImage">Upload Image</a></li>' +
 		'</ul>' +
 		'</div>' +
 		'</header>' +

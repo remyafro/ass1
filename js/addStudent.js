@@ -30,7 +30,7 @@ function updateCSV(data){
 	}
 	var csvInfo = newData.toString() + newLine;
 	console.log(csvInfo);
-	fs.appendFile("./csv/data.csv", csvInfo , function(err){
+	fs.appendFile("./data/data.csv", csvInfo , function(err){
 		if (err) throw err;
 		console.log('Data added to file!');
 	});
@@ -52,7 +52,7 @@ function successHTML(){
 		'<ul class="navbar_main">'+
 		'<li class="navbar_item"><a href="/addStudent">Add Student</a></li>'+
 		'<li class="navbar_item-desktop"><a href="/degreeList">List Of Students</a></li>'+
-		'<li class="navbar_item-desktop"><a href="#">Upload Image</a></li>'+
+		'<li class="navbar_item-desktop"><a href="/uploadImage">Upload Image</a></li>'+
 		'</ul>'+
 		'</div>'+
 		'</header>'+

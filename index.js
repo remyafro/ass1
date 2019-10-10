@@ -14,5 +14,8 @@ handle["/reqError"] = rh.reqError;
 handle["/addStudent"] = rh.reqAddStudent;
 handle["/degreeList"] = rh.reqDegreeList;
 handle["/listStudent"] = rh.reqListStudent;
+handle["/uploadImage"] = rh.reqUploadImage;
+handle["/addImage"] = rh.reqAddImage;
+handle["/reqFile"] = rh.reqFile;
 
 server.startServer(router.route, handle);
