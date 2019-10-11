@@ -23,12 +23,11 @@ function formatData(data){
 function updateCSV(data){
 
 	var newData = data;
-	var newLine = "\r\n";
 
 	for (var i =0; i < newData.length; i++){
 		newData.splice([i], 1);
 	}
-	var csvInfo = newData.toString() + newLine;
+	var csvInfo = newData.toString() + "\r\n";
 	console.log(csvInfo);
 	fs.appendFile("./data/data.csv", csvInfo , function(err){
 		if (err) throw err;

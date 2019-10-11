@@ -82,7 +82,7 @@ function reqUploadImage(request, response){
 function reqAddImage(request, response) {
 
     var form = new formidable.IncomingForm();
-    form.uploadDir = '/tmp/';
+    form.uploadDir = './tmp/';
 
     form.parse(request, function (err, fields, files) {
 
@@ -91,7 +91,10 @@ function reqAddImage(request, response) {
         var newPath = 'images/' + files.upload.name;
 
         fs.rename(oldPath, newPath, function (err) {
-            if (err) throw err;
+            if (err) {
+                fs.unlink(oldPath);
+                fs.rename(oldPath, newPath);
+            }
 
             var rs = viewImage.showImage(newPath)
             response.writeHead(200, {'Content-Type' : 'text/html'});
